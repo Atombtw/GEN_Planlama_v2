@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{951E2931-451B-4A56-8476-051FB84440AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GEN_Planlama</RootNamespace>
+    <AssemblyName>GEN_Planlama</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Frm_AdminGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminGiris.Designer.cs">
+      <DependentUpon>Frm_AdminGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AdminEnvanter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminEnvanter.Designer.cs">
+      <DependentUpon>Frm_AdminEnvanter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AdminKullaniciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminKullaniciEkle.Designer.cs">
+      <DependentUpon>Frm_AdminKullaniciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AdminPersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminPersonelEkle.Designer.cs">
+      <DependentUpon>Frm_AdminPersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_AdminSorumlu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminSorumlu.Designer.cs">
+      <DependentUpon>Frm_AdminSorumlu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BasarıEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BasarıEkran.Designer.cs">
+      <DependentUpon>Frm_BasarıEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HataEkran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HataEkran.Designer.cs">
+      <DependentUpon>Frm_HataEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_HataEkranTarih.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_HataEkranTarih.Designer.cs">
+      <DependentUpon>Frm_HataEkranTarih.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullaniciGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullaniciGiris.Designer.cs">
+      <DependentUpon>Frm_KullaniciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullanıcıKayıtlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullanıcıKayıtlar.Designer.cs">
+      <DependentUpon>Frm_KullanıcıKayıtlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullanıcıPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullanıcıPanel.Designer.cs">
+      <DependentUpon>Frm_KullanıcıPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OleDbBaglantisi.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Frm_AdminGiris.resx">
+      <DependentUpon>Frm_AdminGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AdminEnvanter.resx">
+      <DependentUpon>Frm_AdminEnvanter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AdminKullaniciEkle.resx">
+      <DependentUpon>Frm_AdminKullaniciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AdminPersonelEkle.resx">
+      <DependentUpon>Frm_AdminPersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AdminSorumlu.resx">
+      <DependentUpon>Frm_AdminSorumlu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BasarıEkran.resx">
+      <DependentUpon>Frm_BasarıEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HataEkran.resx">
+      <DependentUpon>Frm_HataEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_HataEkranTarih.resx">
+      <DependentUpon>Frm_HataEkranTarih.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullaniciGiris.resx">
+      <DependentUpon>Frm_KullaniciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullanıcıKayıtlar.resx">
+      <DependentUpon>Frm_KullanıcıKayıtlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullanıcıPanel.resx">
+      <DependentUpon>Frm_KullanıcıPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

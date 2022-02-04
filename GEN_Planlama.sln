@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GEN_Planlama", "GEN_Planlama\GEN_Planlama.csproj", "{951E2931-451B-4A56-8476-051FB84440AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{951E2931-451B-4A56-8476-051FB84440AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{951E2931-451B-4A56-8476-051FB84440AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{951E2931-451B-4A56-8476-051FB84440AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{951E2931-451B-4A56-8476-051FB84440AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7FC18A51-FA52-459B-B2B7-5F9C13AE3D2F}
+	EndGlobalSection
+EndGlobal

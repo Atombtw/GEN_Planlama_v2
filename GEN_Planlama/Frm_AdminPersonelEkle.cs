@@ -40,6 +40,7 @@ namespace GEN_Planlama
             OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Personel Listesi$]", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            bgl.baglanti().Close();
         }
 
         private void Frm_AdminPersonelEkle_Load(object sender, EventArgs e)
@@ -122,6 +123,21 @@ namespace GEN_Planlama
             Frm_AdminEnvanter _AdminEnvanter = new Frm_AdminEnvanter();
             this.Hide();
             _AdminEnvanter.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void pictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            pictureBox2.BackColor = Color.Red;
+        }
+
+        private void pictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            pictureBox2.BackColor = Color.Transparent;
         }
     }
 }

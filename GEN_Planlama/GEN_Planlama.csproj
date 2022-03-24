@@ -32,13 +32,43 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FontAwesome.Sharp, Version=5.15.4.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.15.4\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,6 +78,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Frm_AdminGiris.cs">
@@ -80,11 +111,23 @@
     <Compile Include="Frm_AdminSorumlu.Designer.cs">
       <DependentUpon>Frm_AdminSorumlu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_AdminMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_AdminMain.Designer.cs">
+      <DependentUpon>Frm_AdminMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_BasarıEkran.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm_BasarıEkran.Designer.cs">
       <DependentUpon>Frm_BasarıEkran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullaniciExcelAktar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullaniciExcelAktar.Designer.cs">
+      <DependentUpon>Frm_KullaniciExcelAktar.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_HataEkran.cs">
       <SubType>Form</SubType>
@@ -103,6 +146,18 @@
     </Compile>
     <Compile Include="Frm_KullaniciGiris.Designer.cs">
       <DependentUpon>Frm_KullaniciGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullaniciMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullaniciMain.Designer.cs">
+      <DependentUpon>Frm_KullaniciMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_KullanıcıEtütler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_KullanıcıEtütler.Designer.cs">
+      <DependentUpon>Frm_KullanıcıEtütler.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm_KullanıcıKayıtlar.cs">
       <SubType>Form</SubType>
@@ -134,8 +189,14 @@
     <EmbeddedResource Include="Frm_AdminSorumlu.resx">
       <DependentUpon>Frm_AdminSorumlu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm_AdminMain.resx">
+      <DependentUpon>Frm_AdminMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_BasarıEkran.resx">
       <DependentUpon>Frm_BasarıEkran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullaniciExcelAktar.resx">
+      <DependentUpon>Frm_KullaniciExcelAktar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_HataEkran.resx">
       <DependentUpon>Frm_HataEkran.cs</DependentUpon>
@@ -145,6 +206,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_KullaniciGiris.resx">
       <DependentUpon>Frm_KullaniciGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullaniciMain.resx">
+      <DependentUpon>Frm_KullaniciMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_KullanıcıEtütler.resx">
+      <DependentUpon>Frm_KullanıcıEtütler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_KullanıcıKayıtlar.resx">
       <DependentUpon>Frm_KullanıcıKayıtlar.cs</DependentUpon>
@@ -161,6 +228,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,9 +238,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

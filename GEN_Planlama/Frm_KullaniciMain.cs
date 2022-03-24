@@ -1,26 +1,43 @@
-﻿using System;
+﻿using FontAwesome.Sharp;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace GEN_Planlama
 {
-    public partial class Frm_KullanıcıPanel : Form
+    public partial class Frm_KullaniciMain : Form
     {
-        public Frm_KullanıcıPanel()
+
+        //Fields
+        private IconButton currentBtn;
+        private Panel leftBorderBtn;
+        private Form currentChildFrom;
+
+        public Frm_KullaniciMain()
         {
             InitializeComponent();
+            leftBorderBtn = new Panel();
+            leftBorderBtn.Size = new Size(7, 60);
+            panelMenu.Controls.Add(leftBorderBtn);
+
+            //Form
+            this.Text = string.Empty;
+            this.ControlBox = false;
+            this.DoubleBuffered = true;
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
         OleDbBaglantisi bgl = new OleDbBaglantisi();
         string tarih = DateTime.Now.ToString("dd/MM/yyyy");
-        public string ad1;
+        public string ad;
 
         void Listele()
         {
             DataTable dt = new DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] Where Durum = 'A' and KULLANICI_ADI = '" + ad1 + "'", bgl.baglanti());
+            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] Where Durum = 'A' and KULLANICI_ADI = '" + ad + "'", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
@@ -73,7 +90,183 @@ namespace GEN_Planlama
             txt38.Text = "0";
         }
 
-        private void Frm_KullanıcıPanel_Load(object sender, EventArgs e)
+        //Structs
+        private struct RGBColors
+        {
+            public static Color color1 = Color.FromArgb(172, 126, 241);
+            public static Color color2 = Color.FromArgb(249, 118, 176);
+            public static Color color3 = Color.FromArgb(253, 138, 114);
+            public static Color color4 = Color.FromArgb(95, 77, 221);
+            public static Color color5 = Color.FromArgb(249, 88, 155);
+            public static Color color6 = Color.FromArgb(24, 161, 251);
+        }
+
+        //Methods
+        private void ActivateButton(object senderBtn, Color color)
+        {
+            if (senderBtn != null)
+            {
+                DisibleButton();
+
+                //Button
+                currentBtn = (IconButton)senderBtn;
+                currentBtn.BackColor = Color.FromArgb(37, 36, 81);
+                currentBtn.ForeColor = color;
+                currentBtn.TextAlign = ContentAlignment.MiddleCenter;
+                currentBtn.IconColor = color;
+                currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
+                currentBtn.ImageAlign = ContentAlignment.MiddleRight;
+
+                //Left Border Button
+                leftBorderBtn.BackColor = color;
+                leftBorderBtn.Location = new Point(0, currentBtn.Location.Y);
+                leftBorderBtn.Visible = true;
+                leftBorderBtn.BringToFront();
+
+                //Icon Current Child Form
+                ıconCurrentChildForm.IconChar = currentBtn.IconChar;
+                ıconCurrentChildForm.IconColor = color;
+            }
+        }
+
+        private void DisibleButton()
+        {
+            if (currentBtn != null)
+            {
+                currentBtn.BackColor = Color.FromArgb(31, 30, 68);
+                currentBtn.ForeColor = Color.Gainsboro;
+                currentBtn.TextAlign = ContentAlignment.MiddleLeft;
+                currentBtn.IconColor = Color.Gainsboro;
+                currentBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
+                currentBtn.ImageAlign = ContentAlignment.MiddleLeft;
+
+            }
+        }
+
+        private void OpenChildForm(Form childForm)
+        {
+            if (currentChildFrom != null)
+            {
+                //Open only form
+                currentChildFrom.Close();
+            }
+            currentChildFrom = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panelDesktop2.Controls.Add(childForm);
+            panelDesktop2.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+            lblTitleChildForm.Text = childForm.Text;
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            if (currentChildFrom != null)
+            {
+                //Open only form
+                currentChildFrom.Close();
+            }
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            label14.Visible = false;
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DisibleButton();
+            leftBorderBtn.Visible = false;
+            ıconCurrentChildForm.IconChar = IconChar.Home;
+            ıconCurrentChildForm.IconColor = Color.MediumPurple;
+            lblTitleChildForm.Text = "Home";
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panelTitleBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void ıconButtonDashboard_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color1);
+            if (currentChildFrom != null)
+            {
+                currentChildFrom.Close();
+            }
+            groupBox1.Visible = true;
+            groupBox2.Visible = true;
+            label14.Visible = true;
+            lblTitleChildForm.Text = "Envanter";
+
+            //ActivateButton(sender, RGBColors.color1);
+            //OpenChildForm(new Frm_KullanıcıPanel());
+        }
+
+        private void ıconExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Frm_KullaniciGiris _KullaniciGiris = new Frm_KullaniciGiris();
+            _KullaniciGiris.Show();
+        }
+
+        private void ıconExit_MouseHover(object sender, EventArgs e)
+        {
+            ıconExit.BackColor = Color.Red;
+        }
+
+        private void ıconExit_MouseLeave(object sender, EventArgs e)
+        {
+            ıconExit.BackColor = Color.Transparent;
+        }
+
+        private void ıconPictureBox2_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+            {
+                WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void ıconPictureBox2_MouseHover(object sender, EventArgs e)
+        {
+            ıconPictureBox2.BackColor = Color.Red;
+        }
+
+        private void ıconPictureBox2_MouseLeave(object sender, EventArgs e)
+        {
+            ıconPictureBox2.BackColor = Color.Transparent;
+        }
+
+        private void ıconPictureBox3_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+
+        private void ıconPictureBox3_MouseHover(object sender, EventArgs e)
+        {
+            ıconPictureBox3.BackColor = Color.Red;
+        }
+
+        private void ıconPictureBox3_MouseLeave(object sender, EventArgs e)
+        {
+            ıconPictureBox3.BackColor = Color.Transparent;
+        }
+
+        private void Frm_KullaniciMain_Load(object sender, EventArgs e)
         {
             try
             {
@@ -83,7 +276,7 @@ namespace GEN_Planlama
                 #region text içerikleri
                 ctxtDurum.SelectedIndex = 0;
                 maskedTextBox1.Text = tarih;
-                lblAd.Text = ad1;
+                lblAd.Text = ad;
                 txt11.Text = "0";
                 txt12.Text = "0";
                 txt13.Text = "0";
@@ -842,7 +1035,7 @@ namespace GEN_Planlama
                 MessageBox.Show(hata.ToString());
             }
         }
-
+        
         #region click event
         private void txt11_Click(object sender, EventArgs e)
         {
@@ -969,8 +1162,8 @@ namespace GEN_Planlama
         {
             using (Frm_KullanıcıKayıtlar _KullanıcıKayıtlar = new Frm_KullanıcıKayıtlar())
             {
-                _KullanıcıKayıtlar.lblAd.Text = ad1;
-                
+                _KullanıcıKayıtlar.lblAd.Text = ad;
+
                 int secilen = dataGridView1.SelectedCells[0].RowIndex;
                 _KullanıcıKayıtlar.txtID.Text = dataGridView1.Rows[secilen].Cells[0].Value.ToString();
 
@@ -991,6 +1184,24 @@ namespace GEN_Planlama
                     }
                 }
             }
+        }
+
+        private void ıconButtonOrders_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            label14.Visible = false;
+            OpenChildForm(new Frm_KullanıcıEtütler());
+        }
+
+        private void ıconButtonProducts_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color2);
+            groupBox1.Visible = false;
+            groupBox2.Visible = false;
+            label14.Visible = false;
+            OpenChildForm(new Frm_KullaniciExcelAktar());
         }
     }
 }

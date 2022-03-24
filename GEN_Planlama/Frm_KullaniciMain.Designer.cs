@@ -1,7 +1,7 @@
 ﻿
 namespace GEN_Planlama
 {
-    partial class Frm_KullanıcıPanel
+    partial class Frm_KullaniciMain
     {
         /// <summary>
         /// Required designer variable.
@@ -29,10 +29,23 @@ namespace GEN_Planlama
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KullanıcıPanel));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblAd = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KullaniciMain));
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.ıconButtonProducts = new FontAwesome.Sharp.IconButton();
+            this.ıconButtonOrders = new FontAwesome.Sharp.IconButton();
+            this.ıconButtonDashboard = new FontAwesome.Sharp.IconButton();
+            this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.PictureBox();
+            this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.ıconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.ıconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.ıconExit = new FontAwesome.Sharp.IconPictureBox();
+            this.lblTitleChildForm = new System.Windows.Forms.Label();
+            this.ıconCurrentChildForm = new FontAwesome.Sharp.IconPictureBox();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panelDesktop2 = new System.Windows.Forms.Panel();
+            this.lblEtütSayısı = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -86,47 +99,270 @@ namespace GEN_Planlama
             this.label15 = new System.Windows.Forms.Label();
             this.ctxtDurum = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.lblEtütSayısı = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblAd = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panelMenu.SuspendLayout();
+            this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
+            this.panelTitleBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconCurrentChildForm)).BeginInit();
+            this.panelDesktop2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // panelMenu
             // 
-            this.groupBox1.Controls.Add(this.lblAd);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 2);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(234, 62);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Kullanıcı Bilgi";
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panelMenu.Controls.Add(this.ıconButtonProducts);
+            this.panelMenu.Controls.Add(this.ıconButtonOrders);
+            this.panelMenu.Controls.Add(this.ıconButtonDashboard);
+            this.panelMenu.Controls.Add(this.panelLogo);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenu.Location = new System.Drawing.Point(0, 0);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(220, 729);
+            this.panelMenu.TabIndex = 1;
             // 
-            // lblAd
+            // ıconButtonProducts
             // 
-            this.lblAd.AutoSize = true;
-            this.lblAd.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAd.Location = new System.Drawing.Point(96, 32);
-            this.lblAd.Name = "lblAd";
-            this.lblAd.Size = new System.Drawing.Size(13, 17);
-            this.lblAd.TabIndex = 1;
-            this.lblAd.Text = "-";
+            this.ıconButtonProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButtonProducts.FlatAppearance.BorderSize = 0;
+            this.ıconButtonProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButtonProducts.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButtonProducts.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonProducts.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.ıconButtonProducts.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonProducts.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButtonProducts.IconSize = 32;
+            this.ıconButtonProducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonProducts.Location = new System.Drawing.Point(0, 260);
+            this.ıconButtonProducts.Name = "ıconButtonProducts";
+            this.ıconButtonProducts.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ıconButtonProducts.Size = new System.Drawing.Size(220, 60);
+            this.ıconButtonProducts.TabIndex = 3;
+            this.ıconButtonProducts.Text = "Excel Aktar";
+            this.ıconButtonProducts.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonProducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButtonProducts.UseVisualStyleBackColor = true;
+            this.ıconButtonProducts.Click += new System.EventHandler(this.ıconButtonProducts_Click);
             // 
-            // label1
+            // ıconButtonOrders
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(10, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Kullanıcı Adı:";
+            this.ıconButtonOrders.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButtonOrders.FlatAppearance.BorderSize = 0;
+            this.ıconButtonOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButtonOrders.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButtonOrders.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonOrders.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
+            this.ıconButtonOrders.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonOrders.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButtonOrders.IconSize = 32;
+            this.ıconButtonOrders.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonOrders.Location = new System.Drawing.Point(0, 200);
+            this.ıconButtonOrders.Name = "ıconButtonOrders";
+            this.ıconButtonOrders.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ıconButtonOrders.Size = new System.Drawing.Size(220, 60);
+            this.ıconButtonOrders.TabIndex = 2;
+            this.ıconButtonOrders.Text = "Etütler";
+            this.ıconButtonOrders.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButtonOrders.UseVisualStyleBackColor = true;
+            this.ıconButtonOrders.Click += new System.EventHandler(this.ıconButtonOrders_Click);
+            // 
+            // ıconButtonDashboard
+            // 
+            this.ıconButtonDashboard.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ıconButtonDashboard.FlatAppearance.BorderSize = 0;
+            this.ıconButtonDashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ıconButtonDashboard.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ıconButtonDashboard.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonDashboard.IconChar = FontAwesome.Sharp.IconChar.ChartBar;
+            this.ıconButtonDashboard.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconButtonDashboard.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconButtonDashboard.IconSize = 32;
+            this.ıconButtonDashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonDashboard.Location = new System.Drawing.Point(0, 140);
+            this.ıconButtonDashboard.Name = "ıconButtonDashboard";
+            this.ıconButtonDashboard.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.ıconButtonDashboard.Size = new System.Drawing.Size(220, 60);
+            this.ıconButtonDashboard.TabIndex = 1;
+            this.ıconButtonDashboard.Text = "Envanter";
+            this.ıconButtonDashboard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ıconButtonDashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.ıconButtonDashboard.UseVisualStyleBackColor = true;
+            this.ıconButtonDashboard.Click += new System.EventHandler(this.ıconButtonDashboard_Click);
+            // 
+            // panelLogo
+            // 
+            this.panelLogo.Controls.Add(this.btnHome);
+            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelLogo.Location = new System.Drawing.Point(0, 0);
+            this.panelLogo.Name = "panelLogo";
+            this.panelLogo.Size = new System.Drawing.Size(220, 140);
+            this.panelLogo.TabIndex = 0;
+            // 
+            // btnHome
+            // 
+            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Location = new System.Drawing.Point(13, 14);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(193, 112);
+            this.btnHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnHome.TabIndex = 0;
+            this.btnHome.TabStop = false;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // panelTitleBar
+            // 
+            this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panelTitleBar.Controls.Add(this.ıconPictureBox3);
+            this.panelTitleBar.Controls.Add(this.ıconPictureBox2);
+            this.panelTitleBar.Controls.Add(this.ıconExit);
+            this.panelTitleBar.Controls.Add(this.lblTitleChildForm);
+            this.panelTitleBar.Controls.Add(this.ıconCurrentChildForm);
+            this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitleBar.Location = new System.Drawing.Point(220, 0);
+            this.panelTitleBar.Name = "panelTitleBar";
+            this.panelTitleBar.Size = new System.Drawing.Size(1130, 75);
+            this.panelTitleBar.TabIndex = 2;
+            this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
+            // 
+            // ıconPictureBox3
+            // 
+            this.ıconPictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ıconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ıconPictureBox3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Minus;
+            this.ıconPictureBox3.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconPictureBox3.IconSize = 22;
+            this.ıconPictureBox3.Location = new System.Drawing.Point(1059, 1);
+            this.ıconPictureBox3.Name = "ıconPictureBox3";
+            this.ıconPictureBox3.Size = new System.Drawing.Size(24, 22);
+            this.ıconPictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ıconPictureBox3.TabIndex = 7;
+            this.ıconPictureBox3.TabStop = false;
+            this.ıconPictureBox3.Click += new System.EventHandler(this.ıconPictureBox3_Click);
+            this.ıconPictureBox3.MouseLeave += new System.EventHandler(this.ıconPictureBox3_MouseLeave);
+            this.ıconPictureBox3.MouseHover += new System.EventHandler(this.ıconPictureBox3_MouseHover);
+            // 
+            // ıconPictureBox2
+            // 
+            this.ıconPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ıconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ıconPictureBox2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.ExternalLinkAlt;
+            this.ıconPictureBox2.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconPictureBox2.IconSize = 22;
+            this.ıconPictureBox2.Location = new System.Drawing.Point(1082, 1);
+            this.ıconPictureBox2.Name = "ıconPictureBox2";
+            this.ıconPictureBox2.Size = new System.Drawing.Size(24, 22);
+            this.ıconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ıconPictureBox2.TabIndex = 6;
+            this.ıconPictureBox2.TabStop = false;
+            this.ıconPictureBox2.Click += new System.EventHandler(this.ıconPictureBox2_Click);
+            this.ıconPictureBox2.MouseLeave += new System.EventHandler(this.ıconPictureBox2_MouseLeave);
+            this.ıconPictureBox2.MouseHover += new System.EventHandler(this.ıconPictureBox2_MouseHover);
+            // 
+            // ıconExit
+            // 
+            this.ıconExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ıconExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ıconExit.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ıconExit.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.ıconExit.IconColor = System.Drawing.Color.Gainsboro;
+            this.ıconExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconExit.IconSize = 22;
+            this.ıconExit.Location = new System.Drawing.Point(1105, 1);
+            this.ıconExit.Name = "ıconExit";
+            this.ıconExit.Size = new System.Drawing.Size(24, 22);
+            this.ıconExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.ıconExit.TabIndex = 5;
+            this.ıconExit.TabStop = false;
+            this.ıconExit.Click += new System.EventHandler(this.ıconExit_Click);
+            this.ıconExit.MouseLeave += new System.EventHandler(this.ıconExit_MouseLeave);
+            this.ıconExit.MouseHover += new System.EventHandler(this.ıconExit_MouseHover);
+            // 
+            // lblTitleChildForm
+            // 
+            this.lblTitleChildForm.AutoSize = true;
+            this.lblTitleChildForm.Font = new System.Drawing.Font("Calibri", 9.75F);
+            this.lblTitleChildForm.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblTitleChildForm.Location = new System.Drawing.Point(52, 30);
+            this.lblTitleChildForm.Name = "lblTitleChildForm";
+            this.lblTitleChildForm.Size = new System.Drawing.Size(38, 15);
+            this.lblTitleChildForm.TabIndex = 1;
+            this.lblTitleChildForm.Text = "Home";
+            // 
+            // ıconCurrentChildForm
+            // 
+            this.ıconCurrentChildForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.ıconCurrentChildForm.ForeColor = System.Drawing.Color.MediumPurple;
+            this.ıconCurrentChildForm.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.ıconCurrentChildForm.IconColor = System.Drawing.Color.MediumPurple;
+            this.ıconCurrentChildForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ıconCurrentChildForm.Location = new System.Drawing.Point(18, 26);
+            this.ıconCurrentChildForm.Name = "ıconCurrentChildForm";
+            this.ıconCurrentChildForm.Size = new System.Drawing.Size(32, 32);
+            this.ıconCurrentChildForm.TabIndex = 0;
+            this.ıconCurrentChildForm.TabStop = false;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(220, 75);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1130, 9);
+            this.panelShadow.TabIndex = 3;
+            // 
+            // panelDesktop2
+            // 
+            this.panelDesktop2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop2.Controls.Add(this.lblEtütSayısı);
+            this.panelDesktop2.Controls.Add(this.label14);
+            this.panelDesktop2.Controls.Add(this.groupBox2);
+            this.panelDesktop2.Controls.Add(this.groupBox1);
+            this.panelDesktop2.Controls.Add(this.pictureBox1);
+            this.panelDesktop2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop2.Location = new System.Drawing.Point(220, 84);
+            this.panelDesktop2.Name = "panelDesktop2";
+            this.panelDesktop2.Size = new System.Drawing.Size(1130, 645);
+            this.panelDesktop2.TabIndex = 4;
+            // 
+            // lblEtütSayısı
+            // 
+            this.lblEtütSayısı.AutoSize = true;
+            this.lblEtütSayısı.Location = new System.Drawing.Point(524, 0);
+            this.lblEtütSayısı.Name = "lblEtütSayısı";
+            this.lblEtütSayısı.Size = new System.Drawing.Size(19, 13);
+            this.lblEtütSayısı.TabIndex = 65;
+            this.lblEtütSayısı.Text = "00";
+            this.lblEtütSayısı.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label14.ForeColor = System.Drawing.Color.Gainsboro;
+            this.label14.Location = new System.Drawing.Point(258, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(210, 34);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Zaman Etüt Paneli";
+            this.label14.Visible = false;
             // 
             // groupBox2
             // 
@@ -134,17 +370,21 @@ namespace GEN_Planlama
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox2.ForeColor = System.Drawing.Color.Gainsboro;
             this.groupBox2.Location = new System.Drawing.Point(0, 94);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1130, 551);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 63;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " ";
+            this.groupBox2.Visible = false;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.dataGridView1);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox5.ForeColor = System.Drawing.Color.Black;
             this.groupBox5.Location = new System.Drawing.Point(3, 314);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1124, 234);
@@ -158,7 +398,9 @@ namespace GEN_Planlama
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 21);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 210);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
@@ -240,7 +482,7 @@ namespace GEN_Planlama
             this.txt28.Name = "txt28";
             this.txt28.Size = new System.Drawing.Size(32, 25);
             this.txt28.TabIndex = 28;
-            this.txt28.Click += new System.EventHandler(this.txt28_Click);
+            this.txt28.Click += new System.EventHandler(this.txt34_Click);
             // 
             // txt27
             // 
@@ -248,7 +490,7 @@ namespace GEN_Planlama
             this.txt27.Name = "txt27";
             this.txt27.Size = new System.Drawing.Size(32, 25);
             this.txt27.TabIndex = 27;
-            this.txt27.Click += new System.EventHandler(this.txt27_Click);
+            this.txt27.Click += new System.EventHandler(this.txt33_Click);
             // 
             // txt18
             // 
@@ -256,7 +498,7 @@ namespace GEN_Planlama
             this.txt18.Name = "txt18";
             this.txt18.Size = new System.Drawing.Size(32, 25);
             this.txt18.TabIndex = 26;
-            this.txt18.Click += new System.EventHandler(this.txt18_Click);
+            this.txt18.Click += new System.EventHandler(this.txt22_Click);
             // 
             // txt17
             // 
@@ -264,7 +506,7 @@ namespace GEN_Planlama
             this.txt17.Name = "txt17";
             this.txt17.Size = new System.Drawing.Size(32, 25);
             this.txt17.TabIndex = 25;
-            this.txt17.Click += new System.EventHandler(this.txt17_Click);
+            this.txt17.Click += new System.EventHandler(this.txt21_Click);
             // 
             // label6
             // 
@@ -281,7 +523,7 @@ namespace GEN_Planlama
             this.txt36.Name = "txt36";
             this.txt36.Size = new System.Drawing.Size(32, 25);
             this.txt36.TabIndex = 24;
-            this.txt36.Click += new System.EventHandler(this.txt36_Click);
+            this.txt36.Click += new System.EventHandler(this.txt28_Click);
             // 
             // label7
             // 
@@ -298,7 +540,7 @@ namespace GEN_Planlama
             this.txt35.Name = "txt35";
             this.txt35.Size = new System.Drawing.Size(32, 25);
             this.txt35.TabIndex = 23;
-            this.txt35.Click += new System.EventHandler(this.txt35_Click);
+            this.txt35.Click += new System.EventHandler(this.txt27_Click);
             // 
             // label8
             // 
@@ -315,7 +557,7 @@ namespace GEN_Planlama
             this.txt26.Name = "txt26";
             this.txt26.Size = new System.Drawing.Size(32, 25);
             this.txt26.TabIndex = 22;
-            this.txt26.Click += new System.EventHandler(this.txt26_Click);
+            this.txt26.Click += new System.EventHandler(this.txt32_Click);
             // 
             // label9
             // 
@@ -332,7 +574,7 @@ namespace GEN_Planlama
             this.txt25.Name = "txt25";
             this.txt25.Size = new System.Drawing.Size(32, 25);
             this.txt25.TabIndex = 21;
-            this.txt25.Click += new System.EventHandler(this.txt25_Click);
+            this.txt25.Click += new System.EventHandler(this.txt31_Click);
             // 
             // label10
             // 
@@ -392,7 +634,7 @@ namespace GEN_Planlama
             this.txt34.Name = "txt34";
             this.txt34.Size = new System.Drawing.Size(32, 25);
             this.txt34.TabIndex = 18;
-            this.txt34.Click += new System.EventHandler(this.txt34_Click);
+            this.txt34.Click += new System.EventHandler(this.txt18_Click);
             // 
             // label13
             // 
@@ -409,7 +651,7 @@ namespace GEN_Planlama
             this.txt33.Name = "txt33";
             this.txt33.Size = new System.Drawing.Size(32, 25);
             this.txt33.TabIndex = 17;
-            this.txt33.Click += new System.EventHandler(this.txt33_Click);
+            this.txt33.Click += new System.EventHandler(this.txt17_Click);
             // 
             // txt11
             // 
@@ -425,7 +667,7 @@ namespace GEN_Planlama
             this.txt24.Name = "txt24";
             this.txt24.Size = new System.Drawing.Size(32, 25);
             this.txt24.TabIndex = 16;
-            this.txt24.Click += new System.EventHandler(this.txt24_Click);
+            this.txt24.Click += new System.EventHandler(this.txt26_Click);
             // 
             // txt12
             // 
@@ -441,7 +683,7 @@ namespace GEN_Planlama
             this.txt23.Name = "txt23";
             this.txt23.Size = new System.Drawing.Size(32, 25);
             this.txt23.TabIndex = 15;
-            this.txt23.Click += new System.EventHandler(this.txt23_Click);
+            this.txt23.Click += new System.EventHandler(this.txt25_Click);
             // 
             // txt21
             // 
@@ -449,7 +691,7 @@ namespace GEN_Planlama
             this.txt21.Name = "txt21";
             this.txt21.Size = new System.Drawing.Size(32, 25);
             this.txt21.TabIndex = 9;
-            this.txt21.Click += new System.EventHandler(this.txt21_Click);
+            this.txt21.Click += new System.EventHandler(this.txt23_Click);
             // 
             // txt14
             // 
@@ -465,7 +707,7 @@ namespace GEN_Planlama
             this.txt22.Name = "txt22";
             this.txt22.Size = new System.Drawing.Size(32, 25);
             this.txt22.TabIndex = 10;
-            this.txt22.Click += new System.EventHandler(this.txt22_Click);
+            this.txt22.Click += new System.EventHandler(this.txt24_Click);
             // 
             // txt13
             // 
@@ -481,7 +723,7 @@ namespace GEN_Planlama
             this.txt31.Name = "txt31";
             this.txt31.Size = new System.Drawing.Size(32, 25);
             this.txt31.TabIndex = 11;
-            this.txt31.Click += new System.EventHandler(this.txt31_Click);
+            this.txt31.Click += new System.EventHandler(this.txt35_Click);
             // 
             // txt32
             // 
@@ -489,7 +731,7 @@ namespace GEN_Planlama
             this.txt32.Name = "txt32";
             this.txt32.Size = new System.Drawing.Size(32, 25);
             this.txt32.TabIndex = 12;
-            this.txt32.Click += new System.EventHandler(this.txt32_Click);
+            this.txt32.Click += new System.EventHandler(this.txt36_Click);
             // 
             // groupBox3
             // 
@@ -641,50 +883,75 @@ namespace GEN_Planlama
             this.label16.TabIndex = 21;
             this.label16.Text = "Tarih:";
             // 
-            // label14
+            // groupBox1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.Location = new System.Drawing.Point(258, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(210, 34);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "Zaman Etüt Paneli";
+            this.groupBox1.Controls.Add(this.lblAd);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.groupBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(234, 62);
+            this.groupBox1.TabIndex = 62;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Kullanıcı Bilgi";
+            this.groupBox1.Visible = false;
             // 
-            // lblEtütSayısı
+            // lblAd
             // 
-            this.lblEtütSayısı.AutoSize = true;
-            this.lblEtütSayısı.Location = new System.Drawing.Point(524, 2);
-            this.lblEtütSayısı.Name = "lblEtütSayısı";
-            this.lblEtütSayısı.Size = new System.Drawing.Size(24, 17);
-            this.lblEtütSayısı.TabIndex = 57;
-            this.lblEtütSayısı.Text = "00";
-            this.lblEtütSayısı.Visible = false;
+            this.lblAd.AutoSize = true;
+            this.lblAd.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAd.Location = new System.Drawing.Point(96, 32);
+            this.lblAd.Name = "lblAd";
+            this.lblAd.Size = new System.Drawing.Size(13, 17);
+            this.lblAd.TabIndex = 1;
+            this.lblAd.Text = "-";
             // 
-            // Frm_KullanıcıPanel
+            // label1
             // 
-            this.AcceptButton = this.btnKaydet;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(10, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Kullanıcı Adı:";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(469, 266);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(193, 112);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // Frm_KullaniciMain
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1130, 645);
-            this.Controls.Add(this.lblEtütSayısı);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.MaximizeBox = false;
-            this.Name = "Frm_KullanıcıPanel";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_KullanıcıPanel";
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.panelDesktop2);
+            this.Controls.Add(this.panelShadow);
+            this.Controls.Add(this.panelTitleBar);
+            this.Controls.Add(this.panelMenu);
+            this.Name = "Frm_KullaniciMain";
+            this.Text = "Frm_KullaniciMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Frm_KullanıcıPanel_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.Load += new System.EventHandler(this.Frm_KullaniciMain_Load);
+            this.panelMenu.ResumeLayout(false);
+            this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
+            this.panelTitleBar.ResumeLayout(false);
+            this.panelTitleBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ıconCurrentChildForm)).EndInit();
+            this.panelDesktop2.ResumeLayout(false);
+            this.panelDesktop2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -692,70 +959,88 @@ namespace GEN_Planlama
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ComboBox ctxtAd;
-        private System.Windows.Forms.ComboBox ctxtTezgah;
-        private System.Windows.Forms.ComboBox ctxtOperasyon;
-        private System.Windows.Forms.ComboBox ctxtFullFinish;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panelMenu;
+        private FontAwesome.Sharp.IconButton ıconButtonProducts;
+        private FontAwesome.Sharp.IconButton ıconButtonOrders;
+        private FontAwesome.Sharp.IconButton ıconButtonDashboard;
+        private System.Windows.Forms.Panel panelLogo;
+        private System.Windows.Forms.PictureBox btnHome;
+        private System.Windows.Forms.Panel panelTitleBar;
+        private FontAwesome.Sharp.IconPictureBox ıconPictureBox3;
+        private FontAwesome.Sharp.IconPictureBox ıconPictureBox2;
+        private FontAwesome.Sharp.IconPictureBox ıconExit;
+        private System.Windows.Forms.Label lblTitleChildForm;
+        private FontAwesome.Sharp.IconPictureBox ıconCurrentChildForm;
+        private System.Windows.Forms.Panel panelShadow;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.Label lblEtütSayısı;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button btnKaydet;
-        private System.Windows.Forms.ComboBox ctxtDurum;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox txt11;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt36;
-        private System.Windows.Forms.TextBox txt35;
-        private System.Windows.Forms.TextBox txt26;
-        private System.Windows.Forms.TextBox txt25;
-        private System.Windows.Forms.TextBox txt16;
-        private System.Windows.Forms.TextBox txt15;
-        private System.Windows.Forms.TextBox txt34;
-        private System.Windows.Forms.TextBox txt33;
-        private System.Windows.Forms.TextBox txt24;
-        private System.Windows.Forms.TextBox txt23;
-        private System.Windows.Forms.TextBox txt14;
-        private System.Windows.Forms.TextBox txt13;
-        private System.Windows.Forms.TextBox txt32;
-        private System.Windows.Forms.TextBox txt31;
-        private System.Windows.Forms.TextBox txt22;
-        private System.Windows.Forms.TextBox txt21;
-        private System.Windows.Forms.TextBox txt12;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txt38;
         private System.Windows.Forms.TextBox txt37;
+        private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.TextBox txt28;
         private System.Windows.Forms.TextBox txt27;
         private System.Windows.Forms.TextBox txt18;
         private System.Windows.Forms.TextBox txt17;
-        public System.Windows.Forms.Label lblAd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt36;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt35;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txt26;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt25;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txt16;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt15;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txt34;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt33;
+        private System.Windows.Forms.TextBox txt11;
+        private System.Windows.Forms.TextBox txt24;
+        private System.Windows.Forms.TextBox txt12;
+        private System.Windows.Forms.TextBox txt23;
+        private System.Windows.Forms.TextBox txt21;
+        private System.Windows.Forms.TextBox txt14;
+        private System.Windows.Forms.TextBox txt22;
+        private System.Windows.Forms.TextBox txt13;
+        private System.Windows.Forms.TextBox txt31;
+        private System.Windows.Forms.TextBox txt32;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.Label lblEtütSayısı;
-        private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox ctxtFullFinish;
+        private System.Windows.Forms.ComboBox ctxtOperasyon;
+        private System.Windows.Forms.ComboBox ctxtTezgah;
+        private System.Windows.Forms.ComboBox ctxtAd;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ComboBox ctxtDurum;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label lblAd;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelDesktop2;
     }
 }

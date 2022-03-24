@@ -45,8 +45,10 @@ namespace GEN_Planlama
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(723, 396);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1130, 645);
             this.dataGridView1.TabIndex = 0;
             // 
             // contextMenuStrip1
@@ -68,7 +70,7 @@ namespace GEN_Planlama
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(723, 396);
+            this.ClientSize = new System.Drawing.Size(1130, 645);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -76,7 +78,7 @@ namespace GEN_Planlama
             this.MaximizeBox = false;
             this.Name = "Frm_AdminSorumlu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_AdminSorumlu";
+            this.Text = "Sorumlu";
             this.Load += new System.EventHandler(this.Frm_AdminSorumlu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);

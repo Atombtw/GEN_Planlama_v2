@@ -6,8 +6,7 @@ namespace GEN_Planlama
     {
         public OleDbConnection baglanti()
         {
-            //C:\Users\w 10\Desktop\ENVANTER.xlsx
-            OleDbConnection baglan = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\w 10\Desktop\ENVANTER.xlsx;Extended Properties='Excel 12.0 Xml; HDR = YES;'");
+            OleDbConnection baglan = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Y:\BILGI TEKNOJILERI PROGRAMLAR\Database\PLANLAMA.xlsx;Extended Properties='Excel 12.0 Xml; HDR = YES';");
             baglan.Open();
             return baglan;
         }

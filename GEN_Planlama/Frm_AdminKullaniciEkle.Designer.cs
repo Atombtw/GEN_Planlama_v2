@@ -49,13 +49,12 @@ namespace GEN_Planlama
             this.btnGüncelle = new System.Windows.Forms.Button();
             this.btnTemizle = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblSayı = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ımageList1
@@ -66,15 +65,18 @@ namespace GEN_Planlama
             this.ımageList1.Images.SetKeyName(1, "icons8_clear_symbol_52px.png");
             this.ımageList1.Images.SetKeyName(2, "icons8_search_more_48px.png");
             this.ımageList1.Images.SetKeyName(3, "icons8_file_excel_48px.png");
+            this.ımageList1.Images.SetKeyName(4, "icons8_add_60px.png");
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 166);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 205);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(723, 230);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1130, 440);
             this.dataGridView1.TabIndex = 35;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -90,7 +92,7 @@ namespace GEN_Planlama
             this.groupBox1.Controls.Add(this.txtKullanıcıAd);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.ctxtDurum);
-            this.groupBox1.Location = new System.Drawing.Point(12, 1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(289, 159);
             this.groupBox1.TabIndex = 47;
@@ -98,6 +100,7 @@ namespace GEN_Planlama
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Location = new System.Drawing.Point(128, 13);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(155, 25);
@@ -191,7 +194,7 @@ namespace GEN_Planlama
             this.groupBox2.Controls.Add(this.btnEkle);
             this.groupBox2.Controls.Add(this.btnGüncelle);
             this.groupBox2.Controls.Add(this.btnTemizle);
-            this.groupBox2.Location = new System.Drawing.Point(307, 33);
+            this.groupBox2.Location = new System.Drawing.Point(301, 44);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 127);
             this.groupBox2.TabIndex = 48;
@@ -199,8 +202,9 @@ namespace GEN_Planlama
             // 
             // btnEkle
             // 
+            this.btnEkle.ForeColor = System.Drawing.Color.Black;
             this.btnEkle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEkle.ImageKey = "icons8_update_left_rotation_48px.png";
+            this.btnEkle.ImageKey = "icons8_add_60px.png";
             this.btnEkle.ImageList = this.ımageList1;
             this.btnEkle.Location = new System.Drawing.Point(6, 12);
             this.btnEkle.Name = "btnEkle";
@@ -213,6 +217,7 @@ namespace GEN_Planlama
             // 
             // btnGüncelle
             // 
+            this.btnGüncelle.ForeColor = System.Drawing.Color.Black;
             this.btnGüncelle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGüncelle.ImageKey = "icons8_update_left_rotation_48px.png";
             this.btnGüncelle.ImageList = this.ımageList1;
@@ -227,6 +232,7 @@ namespace GEN_Planlama
             // 
             // btnTemizle
             // 
+            this.btnTemizle.ForeColor = System.Drawing.Color.Black;
             this.btnTemizle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTemizle.ImageKey = "icons8_clear_symbol_52px.png";
             this.btnTemizle.ImageList = this.ımageList1;
@@ -243,73 +249,62 @@ namespace GEN_Planlama
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Impact", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(307, 5);
+            this.label4.Location = new System.Drawing.Point(301, 16);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(272, 34);
             this.label4.TabIndex = 49;
             this.label4.Text = "Kullanıcı Ekleme Paneli";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(543, 79);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(150, 17);
-            this.label6.TabIndex = 50;
-            this.label6.Text = "ekle nin icon değişcek";
-            this.label6.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(695, -2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 51;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
-            // 
             // lblSayı
             // 
             this.lblSayı.AutoSize = true;
-            this.lblSayı.Location = new System.Drawing.Point(669, 1);
+            this.lblSayı.Location = new System.Drawing.Point(579, 0);
             this.lblSayı.Name = "lblSayı";
             this.lblSayı.Size = new System.Drawing.Size(24, 17);
             this.lblSayı.TabIndex = 52;
             this.lblSayı.Text = "00";
             this.lblSayı.Visible = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.groupBox1);
+            this.groupBox3.Controls.Add(this.lblSayı);
+            this.groupBox3.Controls.Add(this.groupBox2);
+            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.ForeColor = System.Drawing.Color.Gainsboro;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1130, 180);
+            this.groupBox3.TabIndex = 53;
+            this.groupBox3.TabStop = false;
+            // 
             // Frm_AdminKullaniciEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.ClientSize = new System.Drawing.Size(723, 396);
-            this.Controls.Add(this.lblSayı);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(1130, 645);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Frm_AdminKullaniciEkle";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Frm_AdminKullaniciEkle";
+            this.Text = "Kullanici Ekle";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Frm_AdminKullaniciEkle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -330,10 +325,9 @@ namespace GEN_Planlama
         private System.Windows.Forms.TextBox txtKullanıcıSifre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnEkle;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblSayı;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

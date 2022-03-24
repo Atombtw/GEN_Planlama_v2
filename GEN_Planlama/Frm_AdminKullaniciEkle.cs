@@ -28,16 +28,6 @@ namespace GEN_Planlama
             bgl.baglanti().Close();
         }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Red;
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent;
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -50,6 +40,7 @@ namespace GEN_Planlama
             OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Kullanıcı Listesi$]", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            bgl.baglanti().Close();
         }
 
         private void Frm_AdminKullaniciEkle_Load(object sender, EventArgs e)

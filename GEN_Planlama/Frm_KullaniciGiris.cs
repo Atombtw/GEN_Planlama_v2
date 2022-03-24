@@ -13,6 +13,7 @@ namespace GEN_Planlama
         }
 
         OleDbBaglantisi bgl = new OleDbBaglantisi();
+        Frm_KullaniciMain _KullaniciMain = new Frm_KullaniciMain();
         Frm_KullanıcıPanel _KullanıcıPanel = new Frm_KullanıcıPanel();
         Frm_HataEkran _HataEkran = new Frm_HataEkran();
 
@@ -38,13 +39,17 @@ namespace GEN_Planlama
                 OleDbDataReader dr = komut.ExecuteReader();
                 if (dr.Read())
                 {
-                    _KullanıcıPanel.ad = txtKullaniciAdi.Text;
-                    _KullanıcıPanel.Show();
+                    _KullaniciMain.ad = txtKullaniciAdi.Text;
+                    _KullaniciMain.Show();
                     this.Hide();
                 }
                 else
                 {
-                    _HataEkran.Show();
+                    _HataEkran.ShowDialog();
+                    panel1.BackColor = Color.Red;
+                    label4.ForeColor = Color.White;
+                    label4.Visible = true;
+                    label4.Text = "Lütfen Bilgilerinizi Kontrol Ediniz!";
                 }
                 bgl.baglanti().Close();
             }
@@ -54,8 +59,17 @@ namespace GEN_Planlama
                 label4.ForeColor = Color.White;
                 label4.Visible = true;
                 label4.Text = "Lütfen Bilgilerinizi Kontrol Ediniz!";
-                _HataEkran.ShowDialog();
             }
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Gainsboro;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -15,9 +14,55 @@ namespace GEN_Planlama
         OleDbBaglantisi bgl = new OleDbBaglantisi();
         bool durum = false;
 
+        void EtütZaman()
+        {
+            OleDbCommand komut = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'ceyhun'", bgl.baglanti());
+            OleDbDataReader dr = komut.ExecuteReader();
+            while (dr.Read())
+            {
+                lblCeyhun.Text = dr[0].ToString();
+            }
+
+            OleDbCommand komut1 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'baran'", bgl.baglanti());
+            OleDbDataReader dr1 = komut1.ExecuteReader();
+            while (dr1.Read())
+            {
+                lblBaran.Text = dr1[0].ToString();
+            }
+
+            OleDbCommand komut2 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'esra'", bgl.baglanti());
+            OleDbDataReader dr2 = komut2.ExecuteReader();
+            while (dr2.Read())
+            {
+                lblEsra.Text = dr2[0].ToString();
+            }
+
+            OleDbCommand komut3 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'nihal'", bgl.baglanti());
+            OleDbDataReader dr3 = komut3.ExecuteReader();
+            while (dr3.Read())
+            {
+                lblNihal.Text = dr3[0].ToString();
+            }
+
+            OleDbCommand komut4 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'yusuf'", bgl.baglanti());
+            OleDbDataReader dr4 = komut4.ExecuteReader();
+            while (dr4.Read())
+            {
+                lblYusuf.Text = dr4[0].ToString();
+            }
+
+            OleDbCommand komut5 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'saadet'", bgl.baglanti());
+            OleDbDataReader dr5 = komut5.ExecuteReader();
+            while (dr5.Read())
+            {
+                lblSaadet.Text = dr5[0].ToString();
+            }
+            bgl.baglanti().Close();
+        }
+
         void EtütSayısı()
         {
-            OleDbCommand komut = new OleDbCommand("Select COUNT(*) From [Envanter Listesi$] where Durum = 'A'", bgl.baglanti());
+            OleDbCommand komut = new OleDbCommand("Select COUNT(*) From [Envanter Listesi$] where Durum = 'A' ", bgl.baglanti());
             OleDbDataReader dr = komut.ExecuteReader();
             while (dr.Read())
             {
@@ -29,31 +74,35 @@ namespace GEN_Planlama
         void Listele()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Envanter Listesi$] where Durum = 'A'", bgl.baglanti());
+            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'A' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            bgl.baglanti().Close();
         }
 
         void Listele2()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Envanter Listesi$] where Durum = 'P'", bgl.baglanti());
+            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'P' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            bgl.baglanti().Close();
         }
 
         void Listele3()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Envanter Listesi$] where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' and OPKODU LIKE '%" + txtOpAd.Text + "%'", bgl.baglanti());
+            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' and OPKODU LIKE '%" + txtOpAd.Text + "%' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            bgl.baglanti().Close();
         }
 
         private void Frm_Envanter_Load(object sender, EventArgs e)
         {
             try
             {
+                EtütZaman();
                 Listele();
                 EtütSayısı();
             }
@@ -61,23 +110,6 @@ namespace GEN_Planlama
             {
                 MessageBox.Show(hata.ToString());
             }
-        }
-
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Red;
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            Frm_KullaniciGiris _KullaniciGiris = new Frm_KullaniciGiris();
-            this.Hide();
-            _KullaniciGiris.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -113,6 +145,7 @@ namespace GEN_Planlama
                 Listele();
                 Temizle();
                 EtütSayısı();
+                EtütZaman();
             }
             catch (Exception hata)
             {
@@ -158,24 +191,6 @@ namespace GEN_Planlama
             {
                 MessageBox.Show(hata.ToString());
             }
-        }
-
-        private void btnSorumlu_Click(object sender, EventArgs e)
-        {
-            Frm_AdminSorumlu _AdminSorumlu = new Frm_AdminSorumlu();
-            _AdminSorumlu.Show();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Frm_AdminKullaniciEkle _AdminKullaniciEkle = new Frm_AdminKullaniciEkle();
-            _AdminKullaniciEkle.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Frm_AdminPersonelEkle _AdminPersonelEkle = new Frm_AdminPersonelEkle();
-            _AdminPersonelEkle.Show();
         }
     }
 }

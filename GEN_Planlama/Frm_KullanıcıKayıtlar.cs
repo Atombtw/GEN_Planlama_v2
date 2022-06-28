@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Data.OleDb;
 
 namespace GEN_Planlama
 {
@@ -13,7 +11,7 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
 
         private void pictureBox1_MouseHover(object sender, EventArgs e)
         {
@@ -38,6 +36,11 @@ namespace GEN_Planlama
         void Temizle()
         {
             txtID.Text = "";
+        }
+
+        private void Frm_KullanıcıKayıtlar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

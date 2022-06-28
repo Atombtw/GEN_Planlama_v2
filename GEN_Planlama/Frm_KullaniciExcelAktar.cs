@@ -1,9 +1,8 @@
 ﻿using System;
 using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace GEN_Planlama
 {
@@ -14,25 +13,48 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
 
         void Listele2()
         {
-            System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select OPKODU as OP, OPISIM as Açıklama ,DEMIR_KODU as ROTA, STZ_A5 as STD_SÜRE From [Envanter Listesi$] where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' order by OPKODU asc", bgl.baglanti());
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
-            bgl.baglanti().Close();
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
+            {
+                c.Open();
+                using (SQLiteDataAdapter cmd = new SQLiteDataAdapter("Select OPKODU as OP, OPISIM as Açıklama ,DEMIR_KODU as ROTA, STZ_A5 as STD_SÜRE From Envanter_Listesi where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' order by OPKODU asc", c))
+                {
+                    System.Data.DataTable dt = new System.Data.DataTable();
+                    cmd.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+
+            //System.Data.DataTable dt = new System.Data.DataTable();
+            //SQLiteDataAdapter da = new SQLiteDataAdapter("Select OPKODU as OP, OPISIM as Açıklama ,DEMIR_KODU as ROTA, STZ_A5 as STD_SÜRE From Envanter_Listesi where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' order by OPKODU asc", bgl.baglanti());
+            //da.Fill(dt);
+            //dataGridView1.DataSource = dt;
+            //bgl.baglanti().Close();
         }
 
         private void Frm_ExcelAktar_Load(object sender, EventArgs e)
         {
-            OleDbDataAdapter da1 = new OleDbDataAdapter("Select * from [Stok Listesi$] order by STOK_KODU asc", bgl.baglanti());
-            System.Data.DataTable dt1 = new System.Data.DataTable();
-            da1.Fill(dt1);
-            txtGmAd.ValueMember = "STOK_KODU";
-            txtGmAd.DataSource = dt1;
-            bgl.baglanti().Close();
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
+            {
+                c.Open();
+                using (SQLiteDataAdapter cmd = new SQLiteDataAdapter("Select * from Stok_Listesi order by STOK_KODU asc", c))
+                {
+                    System.Data.DataTable dt1 = new System.Data.DataTable();
+                    cmd.Fill(dt1);
+                    txtGmAd.ValueMember = "STOK_KODU";
+                    txtGmAd.DataSource = dt1;
+                }
+            }
+
+            //SQLiteDataAdapter da1 = new SQLiteDataAdapter("Select * from Stok_Listesi order by STOK_KODU asc", bgl.baglanti());
+            //System.Data.DataTable dt1 = new System.Data.DataTable();
+            //da1.Fill(dt1);
+            //txtGmAd.ValueMember = "STOK_KODU";
+            //txtGmAd.DataSource = dt1;
+            //bgl.baglanti().Close();
         }
 
         private void btnAra_Click(object sender, EventArgs e)

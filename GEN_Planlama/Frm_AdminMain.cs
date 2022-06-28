@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -8,6 +9,8 @@ namespace GEN_Planlama
 {
     public partial class Frm_AdminMain : Form
     {
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
+
         //Fields
         private IconButton currentBtn;
         private Panel leftBorderBtn;

@@ -31,6 +31,7 @@ namespace GEN_Planlama
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_AdminPersonelEkle));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.ımageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lblSayı = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,7 @@ namespace GEN_Planlama
             this.btnTemizle = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtID = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtKullanıcıAd = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -159,7 +160,7 @@ namespace GEN_Planlama
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtKullanıcıAd);
             this.groupBox1.Controls.Add(this.label1);
@@ -176,21 +177,21 @@ namespace GEN_Planlama
             this.txtID.Location = new System.Drawing.Point(128, 19);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(155, 25);
-            this.txtID.TabIndex = 1;
+            this.txtID.TabIndex = 46;
             // 
-            // label7
+            // label3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(102, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(26, 17);
-            this.label7.TabIndex = 51;
-            this.label7.Text = "ID:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(102, 22);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 17);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "ID:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(71, 90);
+            this.label2.Location = new System.Drawing.Point(71, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 17);
             this.label2.TabIndex = 45;
@@ -198,7 +199,7 @@ namespace GEN_Planlama
             // 
             // txtKullanıcıAd
             // 
-            this.txtKullanıcıAd.Location = new System.Drawing.Point(128, 53);
+            this.txtKullanıcıAd.Location = new System.Drawing.Point(128, 51);
             this.txtKullanıcıAd.Name = "txtKullanıcıAd";
             this.txtKullanıcıAd.Size = new System.Drawing.Size(155, 25);
             this.txtKullanıcıAd.TabIndex = 2;
@@ -206,7 +207,7 @@ namespace GEN_Planlama
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(42, 56);
+            this.label1.Location = new System.Drawing.Point(42, 54);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
             this.label1.TabIndex = 37;
@@ -219,16 +220,20 @@ namespace GEN_Planlama
             this.ctxtDurum.Items.AddRange(new object[] {
             "A",
             "P"});
-            this.ctxtDurum.Location = new System.Drawing.Point(128, 87);
+            this.ctxtDurum.Location = new System.Drawing.Point(128, 85);
             this.ctxtDurum.Name = "ctxtDurum";
             this.ctxtDurum.Size = new System.Drawing.Size(155, 25);
             this.ctxtDurum.TabIndex = 3;
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dataGridView1.Location = new System.Drawing.Point(0, 188);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -309,8 +314,6 @@ namespace GEN_Planlama
         private System.Windows.Forms.Button btnGüncelle;
         private System.Windows.Forms.Button btnTemizle;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtID;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtKullanıcıAd;
         private System.Windows.Forms.Label label1;
@@ -318,5 +321,7 @@ namespace GEN_Planlama
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtID;
+        private System.Windows.Forms.Label label3;
     }
 }

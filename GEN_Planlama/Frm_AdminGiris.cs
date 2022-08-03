@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Drawing;
 
 namespace GEN_Planlama
@@ -12,7 +12,7 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
         Frm_AdminMain _AdminMain = new Frm_AdminMain();
         Frm_HataEkran _HataEkran = new Frm_HataEkran();
 
@@ -20,12 +20,13 @@ namespace GEN_Planlama
         {
             try
             {
-                OleDbCommand komut = new OleDbCommand("Select * From [Kullanıcı Listesi$] Where KULLANICI_ADI = @p1 and KULLANICI_SIFRESI = @p2 and KULLANICI_ADMIN = 'T' and DURUM = 'A'", bgl.baglanti());
-                komut.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
-                komut.Parameters.AddWithValue("@p2", txtSifre.Text);
-                OleDbDataReader dr = komut.ExecuteReader();
+                SQLiteCommand cmd = new SQLiteCommand("Select * From Kullanıcı_Listesi Where KULLANICI_ADI = @p1 and KULLANICI_SIFRESI = @p2 and KULLANICI_ADMIN = 'T' and DURUM = 'A'", bgl.baglanti());
+                cmd.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
+                cmd.Parameters.AddWithValue("@p2", txtSifre.Text);
+                SQLiteDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
+                    bgl.baglanti().Close();
                     _AdminMain.Show();
                     this.Hide();
                 }
@@ -36,8 +37,8 @@ namespace GEN_Planlama
                     label4.ForeColor = Color.White;
                     label4.Visible = true;
                     label4.Text = "Lütfen Bilgilerinizi Kontrol Ediniz!";
+                    bgl.baglanti().Close();
                 }
-                bgl.baglanti().Close();
             }
             catch (Exception)
             {

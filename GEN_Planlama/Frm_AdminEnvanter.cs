@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.OleDb;
+using System.Data.SQLite;
 
 namespace GEN_Planlama
 {
@@ -11,48 +11,48 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
         bool durum = false;
 
         void EtütZaman()
         {
-            OleDbCommand komut = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'ceyhun'", bgl.baglanti());
-            OleDbDataReader dr = komut.ExecuteReader();
+            SQLiteCommand cmd = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'ceyhun'", bgl.baglanti());
+            SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lblCeyhun.Text = dr[0].ToString();
             }
 
-            OleDbCommand komut1 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'baran'", bgl.baglanti());
-            OleDbDataReader dr1 = komut1.ExecuteReader();
+            SQLiteCommand cmd1 = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'baran'", bgl.baglanti());
+            SQLiteDataReader dr1 = cmd1.ExecuteReader();
             while (dr1.Read())
             {
                 lblBaran.Text = dr1[0].ToString();
             }
 
-            OleDbCommand komut2 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'esra'", bgl.baglanti());
-            OleDbDataReader dr2 = komut2.ExecuteReader();
+            SQLiteCommand cmd2 = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'esra'", bgl.baglanti());
+            SQLiteDataReader dr2 = cmd2.ExecuteReader();
             while (dr2.Read())
             {
                 lblEsra.Text = dr2[0].ToString();
             }
 
-            OleDbCommand komut3 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'nihal'", bgl.baglanti());
-            OleDbDataReader dr3 = komut3.ExecuteReader();
+            SQLiteCommand cmd3 = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'nihal'", bgl.baglanti());
+            SQLiteDataReader dr3 = cmd3.ExecuteReader();
             while (dr3.Read())
             {
                 lblNihal.Text = dr3[0].ToString();
             }
 
-            OleDbCommand komut4 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'yusuf'", bgl.baglanti());
-            OleDbDataReader dr4 = komut4.ExecuteReader();
+            SQLiteCommand cmd4 = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'yusuf'", bgl.baglanti());
+            SQLiteDataReader dr4 = cmd4.ExecuteReader();
             while (dr4.Read())
             {
                 lblYusuf.Text = dr4[0].ToString();
             }
 
-            OleDbCommand komut5 = new OleDbCommand("Select Sum(STZ_A5) From [Envanter Listesi$] where Durum = 'A' and KULLANICI_ADI = 'saadet'", bgl.baglanti());
-            OleDbDataReader dr5 = komut5.ExecuteReader();
+            SQLiteCommand cmd5 = new SQLiteCommand("Select Sum(STZ_A5) From Envanter_Listesi where Durum = 'A' and KULLANICI_ADI = 'saadet'", bgl.baglanti());
+            SQLiteDataReader dr5 = cmd5.ExecuteReader();
             while (dr5.Read())
             {
                 lblSaadet.Text = dr5[0].ToString();
@@ -62,8 +62,8 @@ namespace GEN_Planlama
 
         void EtütSayısı()
         {
-            OleDbCommand komut = new OleDbCommand("Select COUNT(*) From [Envanter Listesi$] where Durum = 'A' ", bgl.baglanti());
-            OleDbDataReader dr = komut.ExecuteReader();
+            SQLiteCommand cmd = new SQLiteCommand("Select COUNT(*) From Envanter_Listesi where Durum = 'A' ", bgl.baglanti());
+            SQLiteDataReader dr = cmd.ExecuteReader();
             while (dr.Read())
             {
                 lblEtütSayısı.Text = dr[0].ToString();
@@ -74,7 +74,7 @@ namespace GEN_Planlama
         void Listele()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'A' order by Tarih desc", bgl.baglanti());
+            SQLiteDataAdapter da = new SQLiteDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From Envanter_Listesi where Durum = 'A' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
@@ -83,7 +83,7 @@ namespace GEN_Planlama
         void Listele2()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'P' order by Tarih desc", bgl.baglanti());
+            SQLiteDataAdapter da = new SQLiteDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From Envanter_Listesi where Durum = 'P' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
@@ -92,7 +92,7 @@ namespace GEN_Planlama
         void Listele3()
         {
             System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From [Envanter Listesi$] where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' and OPKODU LIKE '%" + txtOpAd.Text + "%' order by Tarih desc", bgl.baglanti());
+            SQLiteDataAdapter da = new SQLiteDataAdapter("Select ID, STOK_KODU, OPKODU, DEMIR_KODU, PERSONEL_ADI, KULLANICI_ADI, STZ_A5, STZ_E10, STZ_E15, STZ_E20, Tarih, Durum From Envanter_Listesi where Durum = 'A' and STOK_KODU LIKE '%" + txtGmAd.Text + "%' and OPKODU LIKE '%" + txtOpAd.Text + "%' order by Tarih desc", bgl.baglanti());
             da.Fill(dt);
             dataGridView1.DataSource = dt;
             bgl.baglanti().Close();
@@ -137,10 +137,10 @@ namespace GEN_Planlama
         {
             try
             {
-                OleDbCommand komut = new OleDbCommand("Update [Envanter Listesi$] set Durum = @p1 where ID = @p2", bgl.baglanti());
-                komut.Parameters.AddWithValue("@p1", ctxtDurum.Text);
-                komut.Parameters.AddWithValue("@p2", txtID.Text);
-                komut.ExecuteNonQuery();
+                SQLiteCommand cmd = new SQLiteCommand("Update Envanter_Listesi set Durum = @p1 where ID = @p2", bgl.baglanti());
+                cmd.Parameters.AddWithValue("@p1", ctxtDurum.Text);
+                cmd.Parameters.AddWithValue("@p2", txtID.Text);
+                cmd.ExecuteNonQuery();
                 bgl.baglanti().Close();
                 Listele();
                 Temizle();

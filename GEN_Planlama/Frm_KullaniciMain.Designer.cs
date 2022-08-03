@@ -30,6 +30,8 @@ namespace GEN_Planlama
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_KullaniciMain));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.ıconButtonProducts = new FontAwesome.Sharp.IconButton();
             this.ıconButtonOrders = new FontAwesome.Sharp.IconButton();
@@ -85,9 +87,9 @@ namespace GEN_Planlama
             this.txt31 = new System.Windows.Forms.TextBox();
             this.txt32 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -345,11 +347,11 @@ namespace GEN_Planlama
             // lblEtütSayısı
             // 
             this.lblEtütSayısı.AutoSize = true;
-            this.lblEtütSayısı.Location = new System.Drawing.Point(524, 0);
+            this.lblEtütSayısı.Location = new System.Drawing.Point(355, 68);
             this.lblEtütSayısı.Name = "lblEtütSayısı";
-            this.lblEtütSayısı.Size = new System.Drawing.Size(19, 13);
+            this.lblEtütSayısı.Size = new System.Drawing.Size(41, 13);
             this.lblEtütSayısı.TabIndex = 65;
-            this.lblEtütSayısı.Text = "00";
+            this.lblEtütSayısı.Text = "label19";
             this.lblEtütSayısı.Visible = false;
             // 
             // label14
@@ -382,9 +384,11 @@ namespace GEN_Planlama
             // 
             // groupBox5
             // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox5.Controls.Add(this.dataGridView1);
-            this.groupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox5.ForeColor = System.Drawing.Color.Black;
+            this.groupBox5.ForeColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(3, 314);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(1124, 234);
@@ -394,6 +398,9 @@ namespace GEN_Planlama
             // 
             // dataGridView1
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -401,12 +408,16 @@ namespace GEN_Planlama
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Size = new System.Drawing.Size(1118, 210);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // groupBox4
             // 
+            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.Controls.Add(this.txt38);
             this.groupBox4.Controls.Add(this.txt37);
             this.groupBox4.Controls.Add(this.btnKaydet);
@@ -482,7 +493,7 @@ namespace GEN_Planlama
             this.txt28.Name = "txt28";
             this.txt28.Size = new System.Drawing.Size(32, 25);
             this.txt28.TabIndex = 28;
-            this.txt28.Click += new System.EventHandler(this.txt34_Click);
+            this.txt28.Click += new System.EventHandler(this.txt28_Click);
             // 
             // txt27
             // 
@@ -490,7 +501,7 @@ namespace GEN_Planlama
             this.txt27.Name = "txt27";
             this.txt27.Size = new System.Drawing.Size(32, 25);
             this.txt27.TabIndex = 27;
-            this.txt27.Click += new System.EventHandler(this.txt33_Click);
+            this.txt27.Click += new System.EventHandler(this.txt27_Click);
             // 
             // txt18
             // 
@@ -498,7 +509,7 @@ namespace GEN_Planlama
             this.txt18.Name = "txt18";
             this.txt18.Size = new System.Drawing.Size(32, 25);
             this.txt18.TabIndex = 26;
-            this.txt18.Click += new System.EventHandler(this.txt22_Click);
+            this.txt18.Click += new System.EventHandler(this.txt18_Click);
             // 
             // txt17
             // 
@@ -506,7 +517,7 @@ namespace GEN_Planlama
             this.txt17.Name = "txt17";
             this.txt17.Size = new System.Drawing.Size(32, 25);
             this.txt17.TabIndex = 25;
-            this.txt17.Click += new System.EventHandler(this.txt21_Click);
+            this.txt17.Click += new System.EventHandler(this.txt17_Click);
             // 
             // label6
             // 
@@ -523,7 +534,7 @@ namespace GEN_Planlama
             this.txt36.Name = "txt36";
             this.txt36.Size = new System.Drawing.Size(32, 25);
             this.txt36.TabIndex = 24;
-            this.txt36.Click += new System.EventHandler(this.txt28_Click);
+            this.txt36.Click += new System.EventHandler(this.txt36_Click);
             // 
             // label7
             // 
@@ -540,7 +551,7 @@ namespace GEN_Planlama
             this.txt35.Name = "txt35";
             this.txt35.Size = new System.Drawing.Size(32, 25);
             this.txt35.TabIndex = 23;
-            this.txt35.Click += new System.EventHandler(this.txt27_Click);
+            this.txt35.Click += new System.EventHandler(this.txt35_Click);
             // 
             // label8
             // 
@@ -557,7 +568,7 @@ namespace GEN_Planlama
             this.txt26.Name = "txt26";
             this.txt26.Size = new System.Drawing.Size(32, 25);
             this.txt26.TabIndex = 22;
-            this.txt26.Click += new System.EventHandler(this.txt32_Click);
+            this.txt26.Click += new System.EventHandler(this.txt26_Click);
             // 
             // label9
             // 
@@ -574,7 +585,7 @@ namespace GEN_Planlama
             this.txt25.Name = "txt25";
             this.txt25.Size = new System.Drawing.Size(32, 25);
             this.txt25.TabIndex = 21;
-            this.txt25.Click += new System.EventHandler(this.txt31_Click);
+            this.txt25.Click += new System.EventHandler(this.txt25_Click);
             // 
             // label10
             // 
@@ -634,7 +645,7 @@ namespace GEN_Planlama
             this.txt34.Name = "txt34";
             this.txt34.Size = new System.Drawing.Size(32, 25);
             this.txt34.TabIndex = 18;
-            this.txt34.Click += new System.EventHandler(this.txt18_Click);
+            this.txt34.Click += new System.EventHandler(this.txt34_Click);
             // 
             // label13
             // 
@@ -651,7 +662,7 @@ namespace GEN_Planlama
             this.txt33.Name = "txt33";
             this.txt33.Size = new System.Drawing.Size(32, 25);
             this.txt33.TabIndex = 17;
-            this.txt33.Click += new System.EventHandler(this.txt17_Click);
+            this.txt33.Click += new System.EventHandler(this.txt33_Click);
             // 
             // txt11
             // 
@@ -667,7 +678,7 @@ namespace GEN_Planlama
             this.txt24.Name = "txt24";
             this.txt24.Size = new System.Drawing.Size(32, 25);
             this.txt24.TabIndex = 16;
-            this.txt24.Click += new System.EventHandler(this.txt26_Click);
+            this.txt24.Click += new System.EventHandler(this.txt24_Click);
             // 
             // txt12
             // 
@@ -683,7 +694,7 @@ namespace GEN_Planlama
             this.txt23.Name = "txt23";
             this.txt23.Size = new System.Drawing.Size(32, 25);
             this.txt23.TabIndex = 15;
-            this.txt23.Click += new System.EventHandler(this.txt25_Click);
+            this.txt23.Click += new System.EventHandler(this.txt23_Click);
             // 
             // txt21
             // 
@@ -691,7 +702,7 @@ namespace GEN_Planlama
             this.txt21.Name = "txt21";
             this.txt21.Size = new System.Drawing.Size(32, 25);
             this.txt21.TabIndex = 9;
-            this.txt21.Click += new System.EventHandler(this.txt23_Click);
+            this.txt21.Click += new System.EventHandler(this.txt21_Click);
             // 
             // txt14
             // 
@@ -707,7 +718,7 @@ namespace GEN_Planlama
             this.txt22.Name = "txt22";
             this.txt22.Size = new System.Drawing.Size(32, 25);
             this.txt22.TabIndex = 10;
-            this.txt22.Click += new System.EventHandler(this.txt24_Click);
+            this.txt22.Click += new System.EventHandler(this.txt22_Click);
             // 
             // txt13
             // 
@@ -723,7 +734,7 @@ namespace GEN_Planlama
             this.txt31.Name = "txt31";
             this.txt31.Size = new System.Drawing.Size(32, 25);
             this.txt31.TabIndex = 11;
-            this.txt31.Click += new System.EventHandler(this.txt35_Click);
+            this.txt31.Click += new System.EventHandler(this.txt31_Click);
             // 
             // txt32
             // 
@@ -731,13 +742,13 @@ namespace GEN_Planlama
             this.txt32.Name = "txt32";
             this.txt32.Size = new System.Drawing.Size(32, 25);
             this.txt32.TabIndex = 12;
-            this.txt32.Click += new System.EventHandler(this.txt36_Click);
+            this.txt32.Click += new System.EventHandler(this.txt32_Click);
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.maskedTextBox1);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label18);
+            this.groupBox3.Controls.Add(this.maskedTextBox1);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Controls.Add(this.label4);
@@ -755,36 +766,38 @@ namespace GEN_Planlama
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             // 
-            // maskedTextBox1
-            // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(116, 182);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(446, 25);
-            this.maskedTextBox1.TabIndex = 40;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
-            // 
             // textBox1
             // 
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(118, 22);
+            this.textBox1.Location = new System.Drawing.Point(118, 21);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(446, 25);
-            this.textBox1.TabIndex = 39;
+            this.textBox1.Size = new System.Drawing.Size(430, 25);
+            this.textBox1.TabIndex = 42;
+            this.textBox1.Visible = false;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(88, 25);
+            this.label18.Location = new System.Drawing.Point(91, 24);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(26, 17);
-            this.label18.TabIndex = 38;
+            this.label18.TabIndex = 41;
             this.label18.Text = "ID:";
+            this.label18.Visible = false;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(116, 180);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(432, 25);
+            this.maskedTextBox1.TabIndex = 40;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(44, 62);
+            this.label2.Location = new System.Drawing.Point(44, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 0;
@@ -793,7 +806,7 @@ namespace GEN_Planlama
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 103);
+            this.label3.Location = new System.Drawing.Point(8, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(106, 17);
             this.label3.TabIndex = 1;
@@ -802,7 +815,7 @@ namespace GEN_Planlama
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(36, 145);
+            this.label4.Location = new System.Drawing.Point(36, 143);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(81, 17);
             this.label4.TabIndex = 2;
@@ -811,7 +824,7 @@ namespace GEN_Planlama
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 223);
+            this.label5.Location = new System.Drawing.Point(24, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(90, 17);
             this.label5.TabIndex = 3;
@@ -821,42 +834,42 @@ namespace GEN_Planlama
             // 
             this.ctxtFullFinish.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctxtFullFinish.FormattingEnabled = true;
-            this.ctxtFullFinish.Location = new System.Drawing.Point(118, 59);
+            this.ctxtFullFinish.Location = new System.Drawing.Point(118, 57);
             this.ctxtFullFinish.Name = "ctxtFullFinish";
-            this.ctxtFullFinish.Size = new System.Drawing.Size(444, 25);
+            this.ctxtFullFinish.Size = new System.Drawing.Size(430, 25);
             this.ctxtFullFinish.TabIndex = 1;
             // 
             // ctxtOperasyon
             // 
             this.ctxtOperasyon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctxtOperasyon.FormattingEnabled = true;
-            this.ctxtOperasyon.Location = new System.Drawing.Point(120, 100);
+            this.ctxtOperasyon.Location = new System.Drawing.Point(120, 98);
             this.ctxtOperasyon.Name = "ctxtOperasyon";
-            this.ctxtOperasyon.Size = new System.Drawing.Size(444, 25);
+            this.ctxtOperasyon.Size = new System.Drawing.Size(428, 25);
             this.ctxtOperasyon.TabIndex = 2;
             // 
             // ctxtTezgah
             // 
             this.ctxtTezgah.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctxtTezgah.FormattingEnabled = true;
-            this.ctxtTezgah.Location = new System.Drawing.Point(118, 139);
+            this.ctxtTezgah.Location = new System.Drawing.Point(118, 137);
             this.ctxtTezgah.Name = "ctxtTezgah";
-            this.ctxtTezgah.Size = new System.Drawing.Size(444, 25);
+            this.ctxtTezgah.Size = new System.Drawing.Size(430, 25);
             this.ctxtTezgah.TabIndex = 3;
             // 
             // ctxtAd
             // 
             this.ctxtAd.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ctxtAd.FormattingEnabled = true;
-            this.ctxtAd.Location = new System.Drawing.Point(118, 220);
+            this.ctxtAd.Location = new System.Drawing.Point(118, 218);
             this.ctxtAd.Name = "ctxtAd";
-            this.ctxtAd.Size = new System.Drawing.Size(444, 25);
+            this.ctxtAd.Size = new System.Drawing.Size(430, 25);
             this.ctxtAd.TabIndex = 5;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(57, 267);
+            this.label15.Location = new System.Drawing.Point(57, 265);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(57, 17);
             this.label15.TabIndex = 18;
@@ -869,15 +882,15 @@ namespace GEN_Planlama
             this.ctxtDurum.Items.AddRange(new object[] {
             "A",
             "P"});
-            this.ctxtDurum.Location = new System.Drawing.Point(118, 264);
+            this.ctxtDurum.Location = new System.Drawing.Point(118, 262);
             this.ctxtDurum.Name = "ctxtDurum";
-            this.ctxtDurum.Size = new System.Drawing.Size(444, 25);
+            this.ctxtDurum.Size = new System.Drawing.Size(430, 25);
             this.ctxtDurum.TabIndex = 6;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(71, 185);
+            this.label16.Location = new System.Drawing.Point(71, 183);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 17);
             this.label16.TabIndex = 21;
@@ -982,8 +995,6 @@ namespace GEN_Planlama
         private FontAwesome.Sharp.IconPictureBox ıconCurrentChildForm;
         private System.Windows.Forms.Panel panelShadow;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panelDesktop;
-        private System.Windows.Forms.Label lblEtütSayısı;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -1025,8 +1036,6 @@ namespace GEN_Planlama
         private System.Windows.Forms.TextBox txt32;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -1042,5 +1051,8 @@ namespace GEN_Planlama
         public System.Windows.Forms.Label lblAd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelDesktop2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblEtütSayısı;
     }
 }

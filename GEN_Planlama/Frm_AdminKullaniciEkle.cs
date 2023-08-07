@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Drawing;
 using System.Windows.Forms;
-using System.Data.OleDb;
+using System.Data.SQLite;
 
 namespace GEN_Planlama
 {
@@ -12,30 +11,37 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
         Frm_AdminEnvanter _AdminEnvanter = new Frm_AdminEnvanter();
 
         void Sayı()
         {
-            OleDbCommand komut = new OleDbCommand("Select COUNT(*) From [Kullanıcı Listesi$]", bgl.baglanti());
-            OleDbDataReader dr = komut.ExecuteReader();
-            while (dr.Read())
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
             {
-                lblSayı.Text = dr[0].ToString();
-                int sayi1 = Convert.ToInt32(lblSayı.Text);
-                txtID.Text = Convert.ToString(sayi1 + 1);
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand("Select COUNT(*) From Kullanıcı_Listesi", c))
+                {
+                    using (SQLiteDataReader rdr = cmd.ExecuteReader())
+                    {
+                        while (rdr.Read())
+                    {
+                        lblSayı.Text = rdr[0].ToString();
+                        int sayi1 = Convert.ToInt32(lblSayı.Text);
+                        txtID.Text = Convert.ToString(sayi1 + 1);
+                    }
+                }
+                }
             }
-            bgl.baglanti().Close();
-        }
 
-        private void pictureBox1_MouseHover(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Red;
-        }
-
-        private void pictureBox1_MouseLeave(object sender, EventArgs e)
-        {
-            pictureBox1.BackColor = Color.Transparent;
+            //SQLiteCommand cmd = new SQLiteCommand("Select COUNT(*) From Kullanıcı_Listesi", bgl.baglanti());
+            //SQLiteDataReader dr = cmd.ExecuteReader();
+            //while (dr.Read())
+            //{
+            //    lblSayı.Text = dr[0].ToString();
+            //    int sayi1 = Convert.ToInt32(lblSayı.Text);
+            //    txtID.Text = Convert.ToString(sayi1 + 1);
+            //}
+            //bgl.baglanti().Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -46,10 +52,21 @@ namespace GEN_Planlama
 
         void Listele()
         {
-            System.Data.DataTable dt = new System.Data.DataTable();
-            OleDbDataAdapter da = new OleDbDataAdapter("Select * From [Kullanıcı Listesi$]", bgl.baglanti());
-            da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
+            {
+                c.Open();
+                using (SQLiteDataAdapter cmd = new SQLiteDataAdapter("Select * From Kullanıcı_Listesi", c))
+                {
+                    System.Data.DataTable dt = new System.Data.DataTable();
+                    cmd.Fill(dt);
+                    dataGridView1.DataSource = dt;
+                }
+            }
+            //System.Data.DataTable dt = new System.Data.DataTable();
+            //SQLiteDataAdapter da = new SQLiteDataAdapter("Select * From Kullanıcı_Listesi", bgl.baglanti());
+            //da.Fill(dt);
+            //dataGridView1.DataSource = dt;
+            //bgl.baglanti().Close();
         }
 
         private void Frm_AdminKullaniciEkle_Load(object sender, EventArgs e)
@@ -77,24 +94,41 @@ namespace GEN_Planlama
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            try
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
             {
-                OleDbCommand komut = new OleDbCommand("insert into [Kullanıcı Listesi$] (ID, KULLANICI_ADI, KULLANICI_SIFRESI, KULLANICI_ADMIN, DURUM) values (@p1, @p2, @p3, @p4, @p5)", bgl.baglanti());
-                komut.Parameters.AddWithValue("@p1", txtID.Text);
-                komut.Parameters.AddWithValue("@p2", txtKullanıcıAd.Text);
-                komut.Parameters.AddWithValue("@p3", txtKullanıcıSifre.Text);
-                komut.Parameters.AddWithValue("@p4", ctxtAdmin.Text);
-                komut.Parameters.AddWithValue("@p5", ctxtDurum.Text);
-                komut.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                Temizle();
-                Listele();
-                Sayı();
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand("insert into Kullanıcı_Listesi (ID, KULLANICI_ADI, KULLANICI_SIFRESI, KULLANICI_ADMIN, DURUM) values (@p1, @p2, @p3, @p4, @p5)", c))
+                {
+                    cmd.Parameters.AddWithValue("@p1", txtID.Text);
+                    cmd.Parameters.AddWithValue("@p2", txtKullanıcıAd.Text);
+                    cmd.Parameters.AddWithValue("@p3", txtKullanıcıSifre.Text);
+                    cmd.Parameters.AddWithValue("@p4", ctxtAdmin.Text);
+                    cmd.Parameters.AddWithValue("@p5", ctxtDurum.Text);
+                    cmd.ExecuteNonQuery();
+                    Temizle();
+                    Listele();
+                    Sayı();
+                }
             }
-            catch (Exception hata)
-            {
-                MessageBox.Show(hata.ToString());
-            }
+
+            //try
+            //{
+            //    SQLiteCommand cmd = new SQLiteCommand("insert into Kullanıcı_Listesi (ID, KULLANICI_ADI, KULLANICI_SIFRESI, KULLANICI_ADMIN, DURUM) values (@p1, @p2, @p3, @p4, @p5)", bgl.baglanti());
+            //    cmd.Parameters.AddWithValue("@p1", txtID.Text);
+            //    cmd.Parameters.AddWithValue("@p2", txtKullanıcıAd.Text);
+            //    cmd.Parameters.AddWithValue("@p3", txtKullanıcıSifre.Text);
+            //    cmd.Parameters.AddWithValue("@p4", ctxtAdmin.Text);
+            //    cmd.Parameters.AddWithValue("@p5", ctxtDurum.Text);
+            //    cmd.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //    Temizle();
+            //    Listele();
+            //    Sayı();
+            //}
+            //catch (Exception hata)
+            //{
+            //    MessageBox.Show(hata.ToString());
+            //}
         }
 
         void Temizle()
@@ -113,23 +147,39 @@ namespace GEN_Planlama
 
         private void btnGüncelle_Click(object sender, EventArgs e)
         {
-            try
+            using (SQLiteConnection c = new SQLiteConnection("Data Source = Y:\\BILGI TEKNOJILERI PROGRAMLAR\\Database\\GEN_Planlama.db; Version = 3;"))
             {
-                OleDbCommand komut = new OleDbCommand("Update [Kullanıcı Listesi$] set KULLANICI_ADI = @p1, KULLANICI_SIFRESI = @p2, KULLANICI_ADMIN = @p3, DURUM = @p4 where ID = @p5", bgl.baglanti());
-                komut.Parameters.AddWithValue("@p1", txtKullanıcıAd.Text);
-                komut.Parameters.AddWithValue("@p2", txtKullanıcıSifre.Text);
-                komut.Parameters.AddWithValue("@p3", ctxtAdmin.Text);
-                komut.Parameters.AddWithValue("@p4", ctxtDurum.Text);
-                komut.Parameters.AddWithValue("@p5", txtID.Text);
-                komut.ExecuteNonQuery();
-                bgl.baglanti().Close();
-                Listele();
-                Temizle();
+                c.Open();
+                using (SQLiteCommand cmd = new SQLiteCommand("Update Kullanıcı_Listesi set KULLANICI_ADI = @p1, KULLANICI_SIFRESI = @p2, KULLANICI_ADMIN = @p3, DURUM = @p4 where ID = @p5", c))
+                {
+                    cmd.Parameters.AddWithValue("@p1", txtKullanıcıAd.Text);
+                    cmd.Parameters.AddWithValue("@p2", txtKullanıcıSifre.Text);
+                    cmd.Parameters.AddWithValue("@p3", ctxtAdmin.Text);
+                    cmd.Parameters.AddWithValue("@p4", ctxtDurum.Text);
+                    cmd.Parameters.AddWithValue("@p5", txtID.Text);
+                    cmd.ExecuteNonQuery();
+                    Listele();
+                    Temizle();
+                }
             }
-            catch (Exception hata)
-            {
-                MessageBox.Show(hata.ToString());
-            }
+
+            //try
+            //{
+            //    SQLiteCommand cmd = new SQLiteCommand("Update Kullanıcı_Listesi set KULLANICI_ADI = @p1, KULLANICI_SIFRESI = @p2, KULLANICI_ADMIN = @p3, DURUM = @p4 where ID = @p5", bgl.baglanti());
+            //    cmd.Parameters.AddWithValue("@p1", txtKullanıcıAd.Text);
+            //    cmd.Parameters.AddWithValue("@p2", txtKullanıcıSifre.Text);
+            //    cmd.Parameters.AddWithValue("@p3", ctxtAdmin.Text);
+            //    cmd.Parameters.AddWithValue("@p4", ctxtDurum.Text);
+            //    cmd.Parameters.AddWithValue("@p5", txtID.Text);
+            //    cmd.ExecuteNonQuery();
+            //    bgl.baglanti().Close();
+            //    Listele();
+            //    Temizle();
+            //}
+            //catch (Exception hata)
+            //{
+            //    MessageBox.Show(hata.ToString());
+            //}
         }
     }
 }

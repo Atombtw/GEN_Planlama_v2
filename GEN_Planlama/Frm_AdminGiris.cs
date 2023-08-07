@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Data.OleDb;
+using System.Data.SQLite;
 using System.Drawing;
 
 namespace GEN_Planlama
@@ -12,28 +12,33 @@ namespace GEN_Planlama
             InitializeComponent();
         }
 
-        OleDbBaglantisi bgl = new OleDbBaglantisi();
-        Frm_AdminEnvanter _AdminEnvanter = new Frm_AdminEnvanter();
+        SqliteBaglantisi bgl = new SqliteBaglantisi();
+        Frm_AdminMain _AdminMain = new Frm_AdminMain();
         Frm_HataEkran _HataEkran = new Frm_HataEkran();
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
             try
             {
-                OleDbCommand komut = new OleDbCommand("Select * From [Kullanıcı Listesi$] Where KULLANICI_ADI = @p1 and KULLANICI_SIFRESI = @p2 and KULLANICI_ADMIN = 'T' and DURUM = 'A'", bgl.baglanti());
-                komut.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
-                komut.Parameters.AddWithValue("@p2", txtSifre.Text);
-                OleDbDataReader dr = komut.ExecuteReader();
+                SQLiteCommand cmd = new SQLiteCommand("Select * From Kullanıcı_Listesi Where KULLANICI_ADI = @p1 and KULLANICI_SIFRESI = @p2 and KULLANICI_ADMIN = 'T' and DURUM = 'A'", bgl.baglanti());
+                cmd.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
+                cmd.Parameters.AddWithValue("@p2", txtSifre.Text);
+                SQLiteDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    _AdminEnvanter.Show();
+                    bgl.baglanti().Close();
+                    _AdminMain.Show();
                     this.Hide();
                 }
                 else
                 {
-                    _HataEkran.Show();
+                    _HataEkran.ShowDialog();
+                    panel1.BackColor = Color.Red;
+                    label4.ForeColor = Color.White;
+                    label4.Visible = true;
+                    label4.Text = "Lütfen Bilgilerinizi Kontrol Ediniz!";
+                    bgl.baglanti().Close();
                 }
-                bgl.baglanti().Close();
             }
             catch (Exception)
             {
@@ -41,7 +46,6 @@ namespace GEN_Planlama
                 label4.ForeColor = Color.White;
                 label4.Visible = true;
                 label4.Text = "Lütfen Bilgilerinizi Kontrol Ediniz!";
-                _HataEkran.ShowDialog();
             }
         }
 
@@ -55,6 +59,16 @@ namespace GEN_Planlama
             Frm_KullaniciGiris _KullaniciGiris = new Frm_KullaniciGiris();
             _KullaniciGiris.Show();
             this.Hide();
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Black;
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            button1.ForeColor = Color.Gainsboro;
         }
     }
 }
